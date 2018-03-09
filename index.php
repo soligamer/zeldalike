@@ -6,6 +6,7 @@
 </head>
   <script src="pixi/pixi.min.js"></script>
 <body>
-  <script src="js/main.js"></script>
+<canvas></canvas>	
+<script src="js/main.js"></script>
 </body>
 </html>
