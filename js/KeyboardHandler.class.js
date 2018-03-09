@@ -1,3 +1,5 @@
+'use strict';
+
 class KeyboardHandler {
   constructor () {
     this.lastKey = null

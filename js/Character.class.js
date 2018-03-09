@@ -1,3 +1,5 @@
+'use strict';
+
 class Character {
   constructor (keyboardHandler, texture, x, y, map) {
     this.keyboardHandler = keyboardHandler
@@ -44,6 +46,8 @@ class Character {
 
     this.animation = new PIXI.extras.AnimatedSprite(this.animationTextures.goDown)
     this.animation.anchor.set(0.5, 0.667)
+    this.animation.height = 40;
+    this.animation.width = 40;
     this.animation.position.set(x, y)
     this.animation.animationSpeed = 0.1
 
@@ -72,7 +76,6 @@ class Character {
 
   move () {
     let newDirection = this.getDirection()
-    console.log(newDirection, this.lastDirection);
 
     if (newDirection === null) {
       this.animation.gotoAndStop(0)
@@ -93,7 +96,6 @@ class Character {
   }
 
   changeAnimationDir (direction) {
-    console.log(direction);
     switch (direction) {
       case Directions.Up:
         this.animation.textures = this.animationTextures.goUp

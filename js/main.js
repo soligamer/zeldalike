@@ -1,3 +1,5 @@
+'use strict';
+
 const Key = {
   Z: 90,
   Q: 81,
@@ -44,8 +46,8 @@ container.pivot.y = container.height / 2;*/
 
 // Listen for animate update
 
-var count = 005
-var character = new Character(new KeyboardHandler(), texture, 64, 32)
+// var count = 005;
+var character = new Character(new KeyboardHandler(), texture, 300, 300, background)
 
 
 

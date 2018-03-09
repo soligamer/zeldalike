@@ -1,7 +1,39 @@
 'use strict';
+/*
+const Key = {
+  Z: 90,
+  Q: 81,
+  S: 83,
+  D: 68
+}*/
+const Key = {
+  Z: 38,
+  Q: 37,
+  S: 40,
+  D: 39
+}
+/*38
+40
+37
+39*/
+
+const Directions = {
+	Up : 1,
+	Down : 2,
+	Left : 3,
+	Right : 4
+};
+
+const KeyState = {
+  Up: 0,
+  Down: 1
+}
 
 var app = new PIXI.Application(800, 600, {backgroundColor : 0x489848});
 document.body.appendChild(app.view);
+
+var texture = PIXI.Texture.fromImage('img/zelda.png');
+var character = new Character(new KeyboardHandler(), texture, 400, 300, background)
 
 var background = new PIXI.Container();
 
@@ -68,7 +100,9 @@ while (x < map.length)
 //background.x = (app.screen.width - background.width) / 2;
 //background.y = (app.screen.height - background.height) / 2;
 
+app.stage.addChild(character.getAnimation())
 app.ticker.add(function(delta) {
+    character.move();
 });
 
 document.body.addEventListener("keydown", function(e)
